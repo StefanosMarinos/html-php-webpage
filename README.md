@@ -1,5 +1,11 @@
 # 🥿 ShoeShop - Δυναμική Ιστοσελίδα Πώλησης Παπουτσιών
 
+[![HTML5](https://img.shields.io/badge/HTML5-%3C%2F%3E-orange)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+[![CSS3](https://img.shields.io/badge/CSS3-%23-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![PHP](https://img.shields.io/badge/PHP-7%2B-blueviolet)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-✓-lightblue)](https://www.mysql.com/)
+
 Καλωσήρθατε στο **ShoeShop**, μια πλήρως δυναμική ιστοσελίδα e-shop για παπούτσια, σχεδιασμένη με HTML, CSS, JavaScript, PHP και MySQL. Υποστηρίζει προβολή προϊόντων, δυναμική διαχείριση μέσω βάσης δεδομένων, προσφορές/διαφημίσεις και καλάθι αγορών.
 
 ## 🔧 Τεχνολογίες που χρησιμοποιήθηκαν
