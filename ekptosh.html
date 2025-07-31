@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Παιχνιδι</title>
+    <style>
+        .kentro{
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: #e8ebe4;">
+  <div class="kentro">
+    <h1>Διαλεξε την εκπτωση σου!</h1>
+    <p id="paragrafos">
+        <br>
+        <br>
+    </p> 
+  </div>
+  <script>
+  function Butt50() {
+    let Randomnum = Math.floor(Math.random() * 50) + 1;
+    document.getElementById("paragrafos").textContent = 'Δωσε εναν αριθμο';
+
+    let sum = 0;
+    let lastMessage = null;
+    let sum1 = 1;
+
+    let container = document.createElement("div");
+
+    let inputField = document.createElement("input");
+    inputField.type = "text";
+    inputField.placeholder = "Πχ.25";
+    inputField.id = "Input2";
+
+    let newButton = document.createElement("button");
+    newButton.textContent = `Υποβολη`;
+    newButton.addEventListener("click", function () {
+        let arithmos = Number(document.getElementById("Input2").value);
+        sum++;
+
+        if (lastMessage) {
+            if (container.contains(lastMessage)) {
+                container.removeChild(lastMessage);
+            }
+        }
+
+        if (arithmos > 50 || arithmos < 1) {
+            window.alert("απο το 1 εως το 50!");
+            return;
+        }
+
+        if (arithmos === Randomnum) {
+            let sunxaritiria = document.createElement("p");
+            sunxaritiria.textContent = `Συνχαρητιρια κερδισες σε ${sum} προσπαθειες και εχεις ${Randomnum}% εκπτωση στην επομενη παραγκελεια σου!`;
+            container.insertBefore(sunxaritiria, istoriko);
+            lastMessage = sunxaritiria;
+        }
+        else if (arithmos > Randomnum) {
+            let megalyteros = document.createElement("p");
+            megalyteros.textContent = "ο αριθμος ειναι μικροτερος";
+            container.insertBefore(megalyteros, istoriko);
+            lastMessage = megalyteros;
+        }
+        else if (arithmos < Randomnum) {
+            let megalyteros = document.createElement("p");
+            megalyteros.textContent = "ο αριθμος ειναι μεγαλυτερος";
+            container.insertBefore(megalyteros, istoriko);
+            lastMessage = megalyteros;
+        }
+
+        let istorikoo = document.createElement("p");
+        istorikoo.textContent = `προσπαθεια ${sum1}η: ${arithmos}`;
+        container.insertBefore(istorikoo, playagain);
+        sum1++;
+    });
+
+    let istoriko = document.createElement("h2");
+    istoriko.textContent = "Ιστορικο:";
+
+    let playagain = document.createElement("button");
+playagain.textContent = 'Αρχικη Σελιδα';
+playagain.addEventListener("click", function () {
+    window.location.href = 'ιστοσελιδα2.html';
+});
+
+    container.appendChild(inputField);
+    container.appendChild(newButton);
+    container.appendChild(document.createElement("br"));
+    container.appendChild(istoriko);
+    container.appendChild(document.createElement("br"));
+    container.appendChild(playagain);
+
+    document.getElementById("paragrafos").appendChild(container);
+}
+function resetGame() {
+    document.getElementById("paragrafos").innerHTML = '';
+    let buttonContainer = document.createElement("div");
+    let button50 = document.createElement("button");
+    button50.textContent = "Εκπτωση απο 1 εως 50%";
+    button50.addEventListener("click", Butt50);
+    buttonContainer.appendChild(button50);
+
+    document.getElementById("paragrafos").appendChild(buttonContainer);
+}
+window.onload = resetGame;
+</script>
+</body>
+</html>

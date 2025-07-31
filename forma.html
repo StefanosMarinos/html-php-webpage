@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Φόρμα</title>
+  <style>
+    body {
+        background-color: #e8ebe4;
+        font-family: Arial, sans-serif;
+    }
+    .navbar ul {
+    list-style-type: none;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    overflow: hidden;
+  }
+
+  .navbar li {
+    display: inline-block;
+  }
+
+  .navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  .navbar a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .left-links {
+    display: flex; 
+    gap: 15px;
+  }
+
+  .right-links {
+    margin-left: auto; 
+    }
+    .foto{
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          align-items: center;
+        }
+        .foto img{
+          height: 100px;
+          width: 100px;
+        }
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input:focus {
+      border-color: green;
+      outline: none;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    select {
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltip-text {
+      visibility: hidden;
+      width: 200px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    input[placeholder] {
+      font-style: italic;
+    }
+
+    input[placeholder]:focus {
+      font-style: normal;
+    }
+    .register-link {
+          background-color: #28a745;
+          border-radius: 5px;
+          font-size: 20px !important;
+          padding: 8px 12px !important;
+        }
+  </style>
+</head>
+<body style="background-color: #e8ebe4;">
+  <div class="foto">
+  <h1 class="kentro">Stefs clothes</h1><img src="1re7gP-LogoMakr.png" alt="image2"></div>
+  <nav class="navbar">
+    <ul>
+      <div class="left-links"></div>
+      <li>
+        <a href="ιστοσελιδα2.html">Αρχική σελίδα</a>
+      </li>
+      <li>
+        <a href="προιοντα.html">Προϊόντα</a>
+      </li>
+      <li>
+        <a href="επικοινωνια.html">Επικοινωνία</a>
+      </li>
+      <li>
+        <a href="επιχειρηση.html">Η επιχείρηση</a>
+      </li>
+      <li>
+        <a href="index.html">Για εμενα</a>
+      </li>
+      <li>
+        <a href="ekptosh.html">Προσωπικη Εκπτωση</a>
+      </li>
+      <li>
+        <a href="diagwnismos.php">Διαγωνισμος</a>
+      </li>
+      <li>
+        <a href="index.php">Παραγγελία</a>
+      </li>
+      <div class="right-links"></div>
+      <li>
+        <a href="forma.html" class="register-link">Εγγραφη χρηστη</a>
+      </li>
+    </ul>
+  </nav><br>
+  <br>
+  <form>
+    <h2>Εγγραφή Χρήστη</h2>
+    <div class="form-group">
+      <label>Τίτλος:</label> <select>
+        <option value="gr" selected>
+          Κυριος
+        </option>
+        <option value="tr">
+          Κυρια
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="name" class="tooltip">Όνομα: <span class="tooltip-text">Συμπληρώστε το όνομα σας με ελληνικά γράμματα</span></label> <input type="text" id="name" name="name" placeholder="π.χ. Γιώργος" required="">
+    </div>
+    <div class="form-group">
+      <label for="surname">Επώνυμο:</label> <input type="text" id="surname" name="surname" placeholder="π.χ. Παπαδόπουλος" required="">
+    </div>
+    <div class="form-group">
+      <label for="birthdate">Ημερομηνία Γέννησης:</label> <input type="date" id="birthdate" name="birthdate" min="1980-01-01" max="2022-12-31" required="">
+    </div>
+    <div class="form-group">
+      <label for="country">Χώρα Κατοικίας:</label> <select id="country" name="country">
+        <option value="gr" selected>
+          Ελλάδα
+        </option>
+        <option value="tr">
+          Τουρκία
+        </option>
+        <option value="it">
+          Ιταλία
+        </option>
+        <option value="al">
+          Αλβανία
+        </option>
+        <option value="bg">
+          Βουλγαρία
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="marital-status">Οικογενειακή Κατάσταση:</label> <select id="marital-status" name="marital-status">
+        <option value="married">
+          Έγγαμος
+        </option>
+        <option value="single">
+          Άγαμος
+        </option>
+      </select>
+    </div>
+    <h3>Στοιχεία Επικοινωνίας</h3>
+    <div class="form-group">
+      <label for="address">Διεύθυνση:</label> <input type="text" id="address" name="address" required="">
+    </div>
+    <div class="form-group">
+      <label for="city">Πόλη:</label> <input type="text" id="city" name="city" maxlength="15" style="width: 50%;" required="">
+    </div>
+    <div class="form-group">
+      <label for="postcode">Ταχυδρομικός Κώδικας:</label> <input type="text" id="postcode" name="postcode" pattern="\d{5}" placeholder="π.χ. 12345" required="">
+    </div>
+    <div class="form-group">
+      <label for="phone">Τηλέφωνο:</label> <input type="text" id="phone" name="phone" pattern="\d{10}" placeholder="π.χ. 6981234567" required="">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label> <input type="email" id="email" name="email" placeholder="π.χ. example@mail.com" required="">
+    </div>
+    <h3>Δημιουργία Κωδικού Πρόσβασης</h3>
+    <div class="form-group">
+      <label for="username">Συνθηματικό Πρόσβασης:</label> <input type="text" id="username" name="username" required="">
+    </div>
+    <div class="form-group">
+      <label for="password">Κωδικός Πρόσβασης:</label> <input type="password" id="password" name="password" required="">
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="terms" name="terms" required=""> <label for="terms">Έχω διαβάσει και αποδέχομαι τους Όρους & Προϋποθέσεις</label>
+    </div><button type="submit" style="background-color: green;">Υποβολή</button> <button type="reset" style="background-color: red;">Ακύρωση</button>
+  </form>
+  <footer style="background-color: #f8f8f8; padding: 20px; text-align: center; border-top: 1px solid #ddd; margin-top: 20px;">
+    <div style="margin-bottom: 10px;">
+      <p style="margin: 5px; font-size: 14px; color: #666;">Επικοινωνήστε μαζί μας: <a href="%CE%B5%CF%80%CE%B9%CE%BA%CE%BF%CE%B9%CE%BD%CF%89%CE%BD%CE%B9%CE%B1.html" style="color: #007bff; text-decoration: none;">p24094@unipi.gr</a></p>
+    </div>
+    <div style="margin-bottom: 10px;">
+      <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2; text-decoration: none;">Facebook</a> <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2; text-decoration: none;">Twitter</a> <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #C13584; text-decoration: none;">Instagram</a>
+    </div>
+    <div>
+      <p style="margin: 5px; font-size: 12px; color: #aaa;">© 2024 YourWebsite. Όλα τα δικαιώματα κατοχυρωμένα.</p>
+    </div>
+  </footer>
+</body>
+</html>
